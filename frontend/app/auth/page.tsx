@@ -19,10 +19,13 @@ function page() {
   const handleLogin = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
-        email: form.email,
-        password: form.password,
-      });
+      const res = await axios.post(
+        "https://dashboard-4zxv.onrender.com/api/auth/login",
+        {
+          email: form.email,
+          password: form.password,
+        }
+      );
       console.log("Login successful!");
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
@@ -35,11 +38,14 @@ function page() {
   const handleRegister = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
-        name: form.name,
-        email: form.email,
-        password: form.password,
-      });
+      const res = await axios.post(
+        "https://dashboard-4zxv.onrender.com/api/auth/register",
+        {
+          name: form.name,
+          email: form.email,
+          password: form.password,
+        }
+      );
       console.log("Registration successful! Please login.");
       setTab(true);
       setForm({ name: "", email: "", password: "" });

@@ -35,7 +35,9 @@ function page() {
   const [statusFilter, setStatusFilter] = useState<string>("");
 
   const fetchTasks = async () => {
-    const res = await axios.get("http://localhost:5000/api/tasks");
+    const res = await axios.get(
+      "https://dashboard-4zxv.onrender.com/api/tasks"
+    );
     setData(res.data);
     setFilteredData(res.data);
   };
@@ -67,11 +69,14 @@ function page() {
     try {
       if (editingEntity) {
         await axios.put(
-          `http://localhost:5000/api/tasks/${editingEntity}`,
+          `https://dashboard-4zxv.onrender.com/api/tasks/${editingEntity}`,
           formData
         );
       } else {
-        await axios.post("http://localhost:5000/api/tasks", formData);
+        await axios.post(
+          "https://dashboard-4zxv.onrender.com/api/tasks",
+          formData
+        );
       }
 
       setIsDialogOpen(false);
@@ -96,7 +101,7 @@ function page() {
   };
 
   const handleDelete = async (id: string) => {
-    await axios.delete(`https://dashboard-2rjg.onrender.com/api/tasks/${id}`);
+    await axios.delete(`https://dashboard-4zxv.onrender.com/api/tasks/${id}`);
     fetchTasks();
   };
 
