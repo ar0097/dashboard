@@ -86,9 +86,7 @@ function Main({
                   <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">
                     Status
                   </th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">
-                    Created
-                  </th>
+
                   <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">
                     Actions
                   </th>
@@ -111,9 +109,7 @@ function Main({
                         {ele.status}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-600">
-                      2025-11-07
-                    </td>
+
                     <td className="py-3 px-4 text-right">
                       <div className="flex justify-end gap-2">
                         <button
@@ -144,4 +140,3 @@ function Main({
 }
 
 export default Main;
-
