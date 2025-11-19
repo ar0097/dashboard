@@ -10,7 +10,7 @@ function page() {
   const handleTab = () => {
     setTab((prev) => !prev);
   };
-  
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -21,7 +21,7 @@ function page() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://dashboard-4zxv.onrender.com/api/auth/login",
+        "https://dashboard-backend-two-mu.vercel.app/api/auth/login",
         {
           email: form.email,
           password: form.password,
@@ -40,7 +40,7 @@ function page() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://dashboard-4zxv.onrender.com/api/auth/register",
+        "https://dashboard-backend-two-mu.vercel.app/api/auth/register",
         {
           name: form.name,
           email: form.email,
