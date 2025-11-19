@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+
 export default function ProtectedRoute({ children }: any) {
   const router = useRouter();
   const [loading, setLoading] = useState(true);

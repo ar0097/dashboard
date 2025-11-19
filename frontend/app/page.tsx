@@ -36,7 +36,7 @@ function page() {
 
   const fetchTasks = async () => {
     const res = await axios.get(
-      "https://dashboard-4zxv.onrender.com/api/tasks"
+      "https://dashboard-backend-two-mu.vercel.app/api/tasks"
     );
     setData(res.data);
     setFilteredData(res.data);
@@ -69,12 +69,12 @@ function page() {
     try {
       if (editingEntity) {
         await axios.put(
-          `https://dashboard-4zxv.onrender.com/api/tasks/${editingEntity}`,
+          `https://dashboard-backend-two-mu.vercel.app/api/tasks/${editingEntity}`,
           formData
         );
       } else {
         await axios.post(
-          "https://dashboard-4zxv.onrender.com/api/tasks",
+          "https://dashboard-backend-two-mu.vercel.app/api/tasks",
           formData
         );
       }
@@ -101,7 +101,7 @@ function page() {
   };
 
   const handleDelete = async (id: string) => {
-    await axios.delete(`https://dashboard-4zxv.onrender.com/api/tasks/${id}`);
+    await axios.delete(`https://dashboard-backend-two-mu.vercel.app/api/tasks/${id}`);
     fetchTasks();
   };
 
